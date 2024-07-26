@@ -1,0 +1,3 @@
+brctl addbr br0
+brctl addif br0 eth0 eth1 eth2 eth3 eth4
+ifconfig br0 up
