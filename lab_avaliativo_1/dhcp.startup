@@ -1,0 +1,3 @@
+ifconfig eth0 200.210.180.190/27
+
+./etc/init-d/isc-dhcp-server start
