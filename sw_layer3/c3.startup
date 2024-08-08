@@ -1,0 +1,2 @@
+dhclient
+route add default gw 192.168.30.1
