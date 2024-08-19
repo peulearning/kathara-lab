@@ -1,0 +1,2 @@
+ifconfig eth0 10.20.0.2/16
+/etc/init.d/isc-dhcp-server start
