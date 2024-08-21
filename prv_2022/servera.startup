@@ -1,1 +1,3 @@
 ifconfig eth0 200.20.30.1/26
+
+route add default gw 200.20.30.2

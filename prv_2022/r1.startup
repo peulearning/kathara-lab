@@ -1,9 +1,7 @@
-ifconfig eth0 200.40.50.1/28
-ifconfig eth1 20.20.20.2/30
-ifconfig eth2 60.60.60.2/30
+ifconfig eth0 200.40.50.13/28
+ifconfig eth1 20.20.20.1/30
+ifconfig eth2 60.60.60.1/30
 
-route add -net 200.40.50.0/28 gw
-route add -net 20.20.20.0/30 gw
-route add -net 60.60.60.0/30 gw
-
-./etc/init.d/isc-dhcp-server start
+route add -net 30.30.30.0/30 gw 20.20.20.2
+route add -net 50.50.50.0/30 gw 60.60.60.2
+route add -net 200.30.40.0/26 gw 60.60.60.2

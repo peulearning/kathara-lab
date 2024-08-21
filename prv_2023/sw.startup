@@ -1,5 +1,5 @@
 brctl addbr br0
-brctl addif br0 eth0 eth1
+brctl addif br0 eth0 eth1 eth2
 ifconfig br0 up
 
 brctl stp br0 on
