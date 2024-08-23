@@ -2,4 +2,7 @@ ifconfig eth0 20.20.20.2/30
 ifconfig eth1 30.30.30.1/30
 
 route add -net 200.40.50.0/28 gw 20.20.20.1
+route add -net 60.60.60.0/30 gw 20.20.20.1
 route add -net 40.40.40.0/30 gw 30.30.30.2
+route add -net 200.30.40.0/26 gw 30.30.30.2
+route add -net 200.20.30.0/26 gw 30.30.30.2
