@@ -1,0 +1,9 @@
+ifconfig eth0 192.168.100.1/24
+ifconfig eth1 192.168.100.10/24
+
+route add -net 192.168.100.0/24 gw 192.168.100.10  # Rede local
+route add -net 200.150.100.0/24 gw 200.150.100.79  # Rede ISP
+route add -net 150.10.20.0/24 gw 150.10.20.29  # Rede VPN
+route add -net 200.150.100.0/24 gw 200.150.100.79  # Para a rede web
+route add -net 200.150.100.0/24 gw 192.168.100.10  # Gateway para a rede web
+route add -net 150.10.20.0/24 gw 192.168.100.10  # Gateway para a rede vpn
