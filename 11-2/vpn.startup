@@ -1,5 +1,9 @@
-ifconfig eth0 150.10.20.30/24
+ifconfig eth0 150.10.20.30/16
 
-route add -net 192.168.100.0/24 gw 150.10.20.29 
-route add -net 200.150.100.0/24 gw 150.10.20.29
-route add -net 150.10.20.0/24 gw 150.10.20.29
+route add default gw 150.10.0.1
+
+mkdir -p /dev/net
+mknod /dev/net/tun c 10 200
+
+cd /etc/openvpn/
+openvpn server.conf &
