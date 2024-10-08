@@ -1,3 +1,7 @@
 ifconfig eth0 13.109.180.4/24
 
+named-checkzone com /etc/bind/db.com
+
+/etc/init.d/bind restart
+
 route add default gw 13.109.180.3

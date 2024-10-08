@@ -1,3 +1,8 @@
 ifconfig eth0 54.94.240.138/24
 
+
+named-checkzone edu.br /etc/bind/db.edu.br
+/etc/init.d/bind restart
+
+
 route add default gw 54.94.240.137
