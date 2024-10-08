@@ -1,0 +1,15 @@
+ifconfig eth0 50.0.0.1/30
+ifconfig eth1 60.70.80.1/24
+ifconfig eth2 200.0.0.1/24
+
+iptables -t filter -A FORWARD -s 10.0.0.0/8 -o eth1 -j DROP
+iptables -t filter -A FORWARD -s 172.16.0.0/12 -o eth1 -j DROP
+iptables -t filter -A FORWARD -s 192.168.0.0/16 -o eth1 -j DROP
+
+iptables -t filter -A FORWARD -s 192.168.100.0/24 -d 200.0.0.0/24 -j ACCEPT
+iptables -t filter -A FORWARD -s 200.0.0.0/24 -d 192.168.100.0/24 -j ACCEPT
+
+iptables -t filter -A FORWARD -p tcp -s 60.70.80.0/24 -d 192.168.100.0/24 --dport 2222 -j ACCEPT
+
+route add -net 192.168.100.0/24 gw 50.0.0.2
+route add -net 200.0.0.0/24 gw 200.0.0.1

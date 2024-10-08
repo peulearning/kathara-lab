@@ -1,0 +1,3 @@
+ifconfig eth0 54.94.240.138/24
+
+route add default gw 54.94.240.137

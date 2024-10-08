@@ -1,0 +1,13 @@
+ifconfig eth0 192.168.100.1/24
+ifconfig eth1 50.0.0.2/30
+
+# Regras do firewall
+iptables -t filter -A FORWARD -p tcp --dport 2222 -d 192.168.100.20 -j ACCEPT
+iptables -t nat -A PREROUTING -p tcp --dport 2222 -d 50.0.0.1 -j DNAT --to-destination 192.168.100.20:2222
+iptables -A FORWARD -p tcp --dport 2222 -d 192.168.100.20 -j ACCEPT
+
+
+iptables -t nat -A PREROUTING -p tcp --dport 2222 -d 50.0.0.1 -j DNAT --to-destination 192.168.100.20:2222
+iptables -A FORWARD -p tcp --dport 2222 -d 192.168.100.20 -j ACCEPT
+
+route add -net 200.0.0.0/24 gw 50.0.0.1

@@ -1,0 +1,9 @@
+ifconfig eth0 50.0.0.2/30
+ifconfig eth1 8.8.8.7/8
+ifconfig eth2 177.70.6.69/24
+ifconfig eth3 13.109.180.3/24
+ifconfig eth4 54.94.240.137/24
+
+iptables -A FORWARD -s 10.0.0.0/8 -j DROP
+iptables -A FORWARD -s 172.16.0.0/12 -j DROP
+iptables -A FORWARD -s 192.168.0.0/16 -j DROP
