@@ -5,13 +5,13 @@
 ;
 $TTL	86400
 @	IN	SOA	minhaempresa.com. root.minhaempresa.com. (
-			      3		; Serial
+			      1		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
 			  86400 )	; Negative Cache TTL
 ;
-@	IN	NS	sv.minhaempresa.com.
-sv	A		172.16.0.2
-minhaempresa.com	A 172.16.0.2
-intra 	A	172.16.0.2
+@	IN	NS	server.minhaempresa.com.
+sv	A	172.16.0.2
+minhaempresa.com	A	172.16.0.2
+intra	A	172.16.0.2
