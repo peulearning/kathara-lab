@@ -1,6 +1,10 @@
 ifconfig eth0 50.0.0.2
 ifconfig eth1 70.0.0.1
 
+## Dropar os Pacotes das redes Privadas
+iptables -A FORWARD -s 10.0.0.0/8 -j DROP
+iptables -A FORWARD -s 172.16.0.0/12 -j DROP
+iptables -A FORWARD -s 192.168.0.0/16 -j DROP
 
 #Masqueramento Dinâmico
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
