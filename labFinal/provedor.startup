@@ -1,0 +1,8 @@
+ifconfig eth0 10.0.0.2
+ifconfig eth1 50.0.0.1
+
+#Roteamento
+route add default gw 50.0.0.2
+
+#Masqueramento de rede dinâmico
+iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE

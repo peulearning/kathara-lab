@@ -1,0 +1,2 @@
+ifconfig eth0 50.0.0.2
+ifconfig eth1 70.0.0.1

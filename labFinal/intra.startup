@@ -1,0 +1,20 @@
+ifconfig eth0 70.0.0.2
+ifconfig eth1 172.16.0.1
+route add default gw 70.0.0.1
+
+#Habilitar Interface
+mkdir -p /dev/net
+mknod /dev/net/tun c 10 200
+
+#Ligando a VPN
+cd /etc/openvpn/
+openvpn server.conf &
+
+##  Para masqueramento dinâmico
+iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
+
+## Dropar os Pacotes das redes Privadas
+iptables -A FORWARD -s 10.0.0.0/8 -j DROP
+iptables -A FORWARD -s 172.16.0.0/12 -j DROP
+iptables -A FORWARD -s 192.168.0.0/16 -j DROP
+

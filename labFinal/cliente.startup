@@ -1,0 +1,14 @@
+ifconfig eth0 192.168.0.1
+route add defautl gw 192.168.0.2
+
+## Habilitar a interface Tun para o OpenVpn
+mkdir -p /dev/net
+mknod /dev/net/tun c 10 200
+
+#Ligando a VPN
+cd /etc/openvpn/
+openvpn client.conf &
+
+#Validar
+named-checkconf
+

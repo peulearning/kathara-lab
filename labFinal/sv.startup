@@ -1,0 +1,9 @@
+ifconfig eth0 172.16.0.2/12
+route add default gw 172.16.0.1
+
+
+named-checkconf
+named-checkzone minhaempresa.com /etc/bind/db.minhaempresa.com
+
+/etc/init.d/apache2 start
+/etc/init.d/bind restart
